@@ -1,178 +1,268 @@
-html, body{
-  height: 100%;
-  margin: 0;
-  background-image: url("grayscalepic.jpg");
-  background-position: center center;
+<link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Kalam:wght@300&display=swap" rel="stylesheet" type="text/css">
+.jumbotron.jumbotron-fluid.jumbo-index{
+  font-family: Kalam, cursive;
+}
+.navbar.navbar-expand-lg.navbar-dark{
+  font-family: Kalam, cursive;
+    background-color: #000000;
+}
+.sr-only{
+
+}
+.login-back{
+  background-color: #000000;
+  margin-top: 60%;
+  margin-left: -50%;
+  width: 500px;
+  height: 500px;
+}
+.btn.signin-btn.btn-lg.index-search{
+  background-color: #00D8FF;
+  width: 20%;
+  margin-bottom: 2px;
+
+}
+.btn.signin-btn.btn-lg.index-search1{
+  background-color: #00D8FF;
+  width: 20%;
+  margin-top: 6px;
+  margin-left: -65px;
+
+}
+.table.table-rev{
+  color: #FFFFFF;
+}
+.radio-inline.rating{
+padding: 15px 10px 5px 5px;
+}
+.content{
+  color: #FFFFFF;
+  background-color: #000000;
+}
+h2.nyc{
+  font-size: 45px;
+  margin-left: 32rem;
+  text-align: center;
+  background-color: #000000;
+  width: 90px;
+  color: #FFFFFF;
+}
+.review{
+  margin: auto;
+  font-family: Kalam, cursive;
+  margin-top: 4rem;
+  margin-right: 5rem;
+  padding: 40px 10px 20px;
+  color: #FFFFFF;
+  background-color: #000000;
+}
+.navbar-dark .navbar-nav .active > .nav-link{
+  background-color: #00D8FF;
+}
+.col-sm-12.col-md-6.bullet-point{
+  text-align: center;
+
+  font-size: 23px;
+  font-family: Kalam, cursive;
+}
+.rounded.mx-auto.d-block.solo-img{
+  width:300px;
+  height:auto;
+  margin-top: 60px;
+}
+.navbar-brand.index-logo{
+    color: #00D8FF;
+    font-family: 'Bad Script', cursive;
+}
+.display-4.index-welcome{
+    text-align: left;
+    font-family: 'Bad Script', cursive;
+    color:#00D8FF;
+
+}
+.form-control.form-control-lg.index-input{
+  width: 25rem;
+  margin-top: 5px;
+}
+.col.pic-left{
+  background-image: url("../static/images/left_nyc_skyline.png");
+  background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-size: cover;
-  background-color: #464646;
+  background-size: 100% auto;
+  height: 380px;
+   width: 100%;
 }
-.login-side{
-  position: relative;
-  top: 200px;
-  width: 500px;
-  float: left;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 10px 5px;
-  padding: 4px;
+.col.pic-right{
+  background-image: url("../static/images/right_nyc_skyline.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 100% auto;
+  height: 380px;
+   width: 100%;
 }
-.signup-side{
-  position: relative;
-  top: 150px;
-  width: 500px;
-  float: left;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 10px 5px;
-  padding: 4px;
+#carouselControls{
+  margin-top: 20px;
+  box-shadow: .5px .5px 5px rgba(0, 0, 0, .5);
 }
+.col-sm-12.col-md-6.show-all{
+  font-family: Kalam, cursive;
+  padding: 40px 0px 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+}
+.dash-user{
+  padding-top: 20px;
+  text-align: center;
+  font-family: Kalam, cursive;
+}
+.col.index-back1{
 
-.container{
-  margin:0 auto;
-  width:100%;
-  height:100%;
+  background-color: #000000;
+}
+.carousel-inner > .carousel-item > img {
+  width:640px;
+  height:360px;
+}
+.float-left.mr-2.rounded.all-items{
+  width:250px;
+  height:250px;
+  margin-left:6rem;
+}
+.mess-log{
+    padding-top: 20px;
+    font-family: Kalam, cursive;
+    text-align: center;
 
-  background-size: 50%;
-  color: #e6ffff;
-  overflow: hidden;
+}
+.container-review{
+  padding-top: 20px;
+  font-family: Kalam, cursive;
   text-align: center;
 }
-.container h1{
-  font-family: Arial, sans-serif;
-  font-size: 60px;
-  margin-top: 150px;
+.signin-body {
+  background-image: url("../static/Untitled.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+
 }
-.container form{
-  margin: 50px;
+.container.signin-container {
+  margin-top: 30%;
+  margin-left: 15%;
+
 }
-.container input{
-  width: 350px;
-  height: 15px;
-  font-size: 15px;
-  margin: 6px;
-  padding: 20px;
-  transition: all 0.2s ease-in-out;
+.container.signup-container {
+  margin-top: 24%;
+  margin-left: -8%;
+
 }
-.container button{
+.card.contact-card{
+  margin-top: 50px;
+  box-shadow: .5px .5px 5px rgba(0, 0, 0, .5);
+  font-family: Kalam, cursive;
+}
+
+.container.contact-info{
+  margin-top: 10px;
   text-align: center;
-  padding: 15px 32px;
-  background-color: steelblue;
-  margin: 5px;
-  display: inline-block;
-  font-size: 16px;
+  color: #FFFFFF;
+  background-color: #000000;
+  font-family: Kalam, cursive;
 }
-.nav-bar ul{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+h1.log-log{
+  text-align: center;
+  color: #00D8FF;
+  font-size: 70px;
+  font-family: 'Bad Script', cursive;
 }
-.nav-bar li{
-  float: left;
+h1.sig-sig{
+  text-align: center;
+  color: #00D8FF;
+  font-size: 70px;
+  font-family: 'Bad Script', cursive;
 }
-.nav-bar a{
+.card.signin-card {
+  width: 70%;
+  padding: 40px 0px 20px;
+  background-color: #FFFFFF;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+  -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+}
+.form-control.login-user{
+  box-shadow: .5px .5px 5px rgba(0, 0, 0, .5);
+}
+.form-control.login-user.contact-input{
+  margin-left: 53px;
+  width: 25rem;
+}
+.form-control.login-user.contact-text{
+  margin-right:auto;
+  margin-left:auto;
+  width: 30rem;
+}
+img.signin-img {
+  padding: 0 2rem 2rem;
+  margin: auto;
   display: block;
-  color: white;
+  width: 50%;
+}
+form.signin-form {
+  max-width: 350px;
+  margin: auto;
+}
+button.signin-btn {
+  color: #FFFFFF;
+  background-color: #00D8FF;
+  width: 100%;
+}
+button.btn-outline-success{
+  color: #00D8FF;
+  border-color: #00D8FF;
+}
+button.btn-outline-success:hover{
+  background-color: #00D8FF;
+  border-color: #00D8FF;
+}
+button.new-place{
+  color: #00D8FF;
+  border-color: #00D8FF;
+
+}
+.button-review{
+  padding: 9px;
+}
+.contact-send{
+  padding-bottom: 10px;
+  width: 20%;
+  margin:auto;
+}
+.review_place{
+
+}
+.jumbotron.jumbotron-fluid.jumbo-index {
+  background: none;
   text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+  font-family: Kalam, cursive;
+  flex-direction: row;
 }
-.nav-bar a:hover:not(.logout) {
-  background-color: #111;
+.row.index-search{
+  padding-top: 6rem;
+  height: 250px;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-family: 'Bad Script', cursive;
 }
-
-#samples{
-  width:1000px;
-  overflow: hidden;
-  margin: 50px auto;
+.nav-item.add-right{
+  float:right;
 }
-.photobanner {
- height: 233px;
- width: 3550px;
- margin-bottom: 80px;
+.about_me{
+  text-align: center;
+  font-family: Kalam, cursive;
+  padding: 40px 0px 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
 }
-.first {
- -webkit-animation: bannermove 15s linear infinite;
-    -moz-animation: bannermove 15s linear infinite;
-     -ms-animation: bannermove 15s linear infinite;
-      -o-animation: bannermove 15s linear infinite;
-         animation: bannermove 15s linear infinite;
-}
-@keyframes "bannermove" {
- 0% {
-    margin-left: 0px;
- }
- 100% {
-    margin-left: -2125px;
- }
-}
-@-moz-keyframes bannermove {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -2125px;
- }
-
-}
-
-@-webkit-keyframes "bannermove" {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -2125px;
- }
-
-}
-
-@-ms-keyframes "bannermove" {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -2125px;
- }
-
-}
-
-@-o-keyframes "bannermove" {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -2125px;
- }
-
-}
-.photobanner {
- height: 233px;
- width: 3550px;
- margin-bottom: 80px;
-}
-
-.photobanner img {
- -webkit-transition: all 0.5s ease;
- -moz-transition: all 0.5s ease;
- -o-transition: all 0.5s ease;
- -ms-transition: all 0.5s ease;
- transition: all 0.5s ease;
-}
-
-.photobanner img:hover {
- -webkit-transform: scale(1.1);
- -moz-transform: scale(1.1);
- -o-transform: scale(1.1);
- -ms-transform: scale(1.1);
- transform: scale(1.1);
- cursor: pointer;
-
- -webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
- -moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
- box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+img.alex{
+  width: 250px;
+  height: auto;
 }
