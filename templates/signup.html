@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Welcome Sign Up</title>
+    <link rel="stylesheet" href="../static/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/main.css">
+  </head>
+  <body class="signin-body">
+    <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">MyTravel</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('home')}}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link">Hi Visitor!</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('reg_bp.login')}}">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="{{url_for('reg_bp.signup')}}">sign up <span class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+      </div>
+    </nav>
+    <div class="flashes" class="alert alert-success" role="alert">
+      {% for message in get_flashed_messages() %}
+        <h4>{{ message }}</h4>
+      {% endfor %}
+    </div>
+    <div class="container signin-container">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-8">
+          <div class="card signin-card">
+            <div class="card-block">
+              <img src="../static/logos/signup.png" alt="login" class="img-fluid signin-img">
+              <form class="signin-form" action="{{url_for('reg_bp.signup')}}"  method="post">
+                <div class="form-group">
+                  <input placeholder="Enter your email address" type="email" name="email_name_new" class="form-control" id="emaileInput"required>
+                </div>
+                <div class="form-group">
+                <input placeholder="Enter your username" type="text" name="user_name_new" minlength="6" class="form-control" id="usernameInput" required>
+                </div>
+                <div class="form-group">
+                <input placeholder="create your password" type="password" name="pwd_new" minlength="6" class="form-control" id="passwordInput" required>
+                </div>
+                <div class="form-group">
+                <input placeholder="confirm your password" type="password" name="ver_pwd" minlength="6" class="form-control" id="passwordInput" required>
+                </div>
+                <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="terms">
+                <label class="form-check-label" for="autoSizingCheck">Agree to <a href="#">terms and conditions</a></label>
+              </div>
+                <button type="submit" class="btn signin-btn btn-lg">Sign Up</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+        <div class="col"></div>
+
+      </div>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+  </body>
+</html>

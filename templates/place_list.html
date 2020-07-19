@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Travel Local</title>
+  <link rel="stylesheet" href="../static/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/main.css">
+</head>
+
+  <body>
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand index-logo" href="{{url_for('home')}}">MyTravel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        {% if current_user.is_authenticated %}
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item active">
+              <a class="nav-link" href="{{url_for('home')}}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('about_me')}}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('contact_me')}}">Contact</a>
+            </li>
+          </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link">Hi {{username}}!</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('dashboard_bp.user_dashboard')}}">dashboard</a>
+                </li>
+
+              </ul>
+          <form class="form-inline" action="{{url_for('reg_bp.logout')}}" method="post">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+          </form>
+          {% else %}
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+              <li class="nav-item active">
+                <a class="nav-link" href="{{url_for('home')}}">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('about_me')}}">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('contact_me')}}">Contact</a>
+              </li>
+              </ul>
+              </div>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link">Hi {{username}}!</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('reg_bp.login')}}">Login/sign up</a>
+                  </li>
+                </ul>
+          {% endif %}
+        </div>
+      </nav>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-sm-12 col-md-6">
+          <img alt="picture"src="{{url_for('static', filename=profile_pic.pic_url)}}"  class="rounded mx-auto d-block solo-img">
+        </div>
+        <div class="col"></div>
+      </div>
+      <div class="row">
+          <div class="col"></div>
+          <div class="col-sm-12 col-md-6 bullet-point">
+            <p style="font-size:60px; font-family:none; color:#00D8FF;">.</p>
+            <p style="margin-bottom: -30px; margin-top: -50px;"><br>{{profile_pic.name}}</p>
+            <p style="font-size:60px; font-family:none; color:#00D8FF;">.</p>
+            <p style="margin-bottom: -30px; margin-top: -50px;"><br>{{profile_pic.address}}</p>
+            <p style="font-size:60px; font-family:none; color:#00D8FF; ">.</p>
+            <p style="margin-bottom: -30px; margin-top: -50px;"><br>{{profile_pic.description}}</p>
+          </div>
+          <div class="col"></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-3"></div>
+      <div class="col-sm-12 col-md-6">
+        <div class="review">
+          <div class="row">
+            <div class="col" style="margin-left:10px;">
+              <h3>User Reviews:</h3>
+              <div class="row">
+                <div class="col">
+                  <h3>User</h3>
+                </div>
+                <div class="col">
+                  <h3>Date Posted</h3>
+                </div>
+                <div class="col">
+                  <h3>Review</h3>
+                </div>
+                <div class="col">
+                  <h3>rating</h3>
+                </div>
+              </div>
+                {% for item in place_rev %}
+              <div class="row">
+                <div class="col">
+                  <p>{{item.username}}</p>
+                </div>
+                <div class="col">
+                  <p>{{item.date_review}}</p>
+                </div>
+                <div class="col">
+                  <p>{{item.review}}</p>
+                </div>
+                <div class="col">
+                  <p>{{item.rating}}</p>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="content">
+            <div class="row">
+              <div class="col">
+
+              </div>
+              <div class="col-8">
+                <form class="review_place" action="{{url_for('review_bp.add_review',place_id=profile_pic.place_id)}}" method="post">
+                  <div class="row" style="margin-left:24px;">
+                    <label class="radio-inline rating"><input type="radio" name="optradio" value="1">1</label>
+                    <label class="radio-inline rating"><input type="radio" name="optradio" value="2">2</label>
+                    <label class="radio-inline rating"><input type="radio" name="optradio" value="3">3</label>
+                    <label class="radio-inline rating"><input type="radio" name="optradio" value="4">4</label>
+                    <label class="radio-inline rating"><input type="radio" name="optradio" value="5" checked>5</label>
+                  </div>
+
+                    <textarea style="width:80%;margin-left: 30px;" rows="5" cols="80" name="review_post">Enter review here...</textarea>
+                    <div class="button-review">
+                      <div class="row">
+                        <div class="col">
+
+                        </div>
+                        <div class="col-4">
+                          <button type="submit" class="btn btn-primary" name="submit">SUBMIT</button>
+                        </div>
+                        <div class="col">
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                </form>
+              </div>
+              <div class="col">
+
+              </div>
+
+            </div>
+
+          </div>
+      </div>
+      </div>
+      <div class="col"></div>
+    </div>
+
+
+
+    </div>
+    <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
